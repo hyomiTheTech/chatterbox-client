@@ -7,7 +7,7 @@ var Parse = {
     console.log(`Data: ${data}`);
     console.log('Success');
   },
-
+  // review usage of success callback
   create: function(message, successCB, errorCB = null) {
     // todo: save a message to the server
     // create ajax request
@@ -15,7 +15,7 @@ var Parse = {
       // pass in the message
       url: Parse.server,
       type: 'POST',
-      data: message,
+      data: JSON.stringify(message),
       contentType: 'application/json',
       success: this.success,
       error: errorCB || function(error) {
