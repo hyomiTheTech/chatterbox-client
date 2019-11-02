@@ -2,8 +2,8 @@ var RoomsView = {
 
   $button: $('#rooms button'),
   $select: $('#rooms select'),
-  currentRoom: function() {
-    return this.$select['0'].value;
+  currentRoom: function(roomName) {
+    return roomName || this.$select['0'].value;
   },
 
 
@@ -15,7 +15,7 @@ var RoomsView = {
     });
     this.$button.on('click', Rooms.add);
     this.$select.on('change', function(event) {
-      this.currentRoom = event.target.value;
+      this.currentRoom(event.target.value);
     });
   },
 
