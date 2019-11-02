@@ -1,6 +1,6 @@
 var RoomsView = {
 
-  $button: $('#rooms button').on('click', Rooms.add),
+  $button: $('#rooms button'),
   $select: $('#rooms select'),
 
   initialize: function() {
@@ -9,6 +9,7 @@ var RoomsView = {
         this.renderRoom(msg.roomname);
       });
     });
+    this.$button.on('click', Rooms.add);
   },
 
   renderRoom: function(roomName) {
